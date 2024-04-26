@@ -1,22 +1,83 @@
-<title> Mobile-Development | Nate Reeves</title>
-<meta name="description" content="general work for IT-Garnet class.">
-<meta name="author" content="nreeves">
-<link rel="styles" href="../mobile-development/pre-assessment/assets/css/screen.css">
-<link href="/GitHub/mobile-development/style/style.css" rel="stylesheet"/>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IT Garnet</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="icon" href="assets/img/favicon.ico" sizes="any">
+    <link rel="icon" href="assets/img/icon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/assets/style/main.css">
+    <link rel="apple-touch-icon" href="assets/img/icon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/9dcd80ae9e.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/110/three.min.js"></script> <!-- Include three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.21/vanta.net.min.js"></script> <!-- Include Vanta.js NET effect -->
 </head>
-
 <body>
-<h1 id="main-heading">Nate Reeves</h1>
-<nav class="primary"></nav>
-      <ul> 
-          <li><a href="pre-assessment/index.html"> Pre-assessment || Mobile Development </a></li>
-          <li><a href="resume/index.html" target="_blank">microdata resume || Mobile development</a></li>
-          <li><a href="html-fluid-grid/index.html">Fluid grid assignment || Mobile Development</a></li>
-          <li><a href="html-fluid-grid/index.html">css-grid-exercise-1 || Mobile Development</a></li>
-      </ul>
-      <p>
-        notes: Redo home page with SCSS + Bootstrap
 
-      </p>
+
+<div class="jumbotron">
+    <div class="container">
+        <h1>
+            <a href="index.html" class="it-garnet"></i> IT Garnet</a>
+        </h1>
+        <p>
+           IT Garnet Course work by Nate Reeves
+        </p>
+        <ul class="links">
+            <li class="htitle">Related Links:</li>
+            <li class="hlink"><a href="#" target="_blank"><i class="fab fa-github"></i> Github</a></li>
+        </ul>
+        <ul class="links">
+            <li class="htitle">Course Pages:</li>
+            <li class="hlink"><a href="https://thomaswallace.net/course/it-minor/it-garnet/" target="_blank">Thomas Wallace</a></li>
+    </div>
+</div>
+
+<div class="container filtering">
+    <div class="col col-md-3 col-xs-6 f-cat">
+        <div class="col col-md-3 col-xs-6 f-cat">
+            <a href="pre-assessment/index.html">pre-assessment</a>
+        </div>
+        <div class="col col-md-3 col-xs-6 f-cat">
+            <a href="final-resume/index.html">FINAL AND RESUME IN ONE PROJECT</a>
+        </div>
+        <div class="col col-md-3 col-xs-6 f-cat">
+            <a href="/grid/index.html">GRID assignment</a>
+        </div>
+        <div class="col col-md-3 col-xs-6 f-cat">
+            <a href="/css-grid-example/index.html">CSS grid example</a>
+        </div>
+        <div class="col col-md-3 col-xs-6 f-cat">
+            <a href="/bootstrap-practice/index.html">bootstrap practice</a>
+        </div>
+        <div class="col col-md-3 col-xs-6 f-cat">
+            <a href="/html-semantics/index.html">HTML semantics</a>
+        </div>
+        <div class="col col-md-3 col-xs-6 f-cat">
+            <a href="/responsive-images/index.html">responsive-images</a>
+        </div>
+        <div class="col col-md-3 col-xs-6 f-cat">
+            <a href="/audio-assignment/index.html">audio-video assignment</a>
+        </div>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    VANTA.NET({
+        el: ".jumbotron",
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 300,
+        minWidth: 200,
+        scale: 1,
+        scaleMobile: 1
+        });
+    });
+</script>
+
 </body>
+</html>
