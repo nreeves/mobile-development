@@ -38,10 +38,7 @@
             <div class="addr">Waco</div>
             <div class="duration">Jan 2022 - Now</div>
           </div>
-          <div class="right">
-            <div class="name">Future additions </div>
-            <div class="desc">did This and that</div>
-          </div>
+
         </div>
 
       </div>
@@ -97,57 +94,50 @@
        <div class="skills">
          <div class="skills__item">
            <div class="left"><div class="name">
-             Javascript
              </div></div>
-           <div class="right">
-                          <input  id="ck1" type="checkbox" checked/>
+        <script>
+            function generateSkillsItem(skillName, numCheckboxes, checkedIndexes) {
+            const skillsItemDiv = document.createElement('div');
+            skillsItemDiv.classList.add('skills__item');
 
-             <label for="ck1"></label>
-                          <input id="ck2" type="checkbox" checked/>
+            const leftDiv = document.createElement('div');
+            leftDiv.classList.add('left', 'name');
+            leftDiv.textContent = skillName;
+            skillsItemDiv.appendChild(leftDiv);
 
-              <label for="ck2"></label>
-                         <input id="ck3" type="checkbox" />
+            const rightDiv = document.createElement('div');
+            rightDiv.classList.add('right');
 
-              <label for="ck3"></label>
-                           <input id="ck4" type="checkbox" />
-            <label for="ck4"></label>
-                          <input id="ck5" type="checkbox" />
-              <label for="ck5"></label>
+            for (let i = 1; i <= numCheckboxes; i++) {
+                const checkbox = document.createElement('input');
+                checkbox.setAttribute('type', 'checkbox');
+                checkbox.id = `ck${i}`;
 
-           </div>
-         </div>
-         
-       </div>
-       <div class="skills__item">
-           <div class="left"><div class="name">
-             CSS</div></div>
-           <div class="right">
-                          <input  id="ck1" type="checkbox" checked/>
+                if (checkedIndexes.includes(i)) {
+                    checkbox.checked = true;
+                }
 
-             <label for="ck1"></label>
-                          <input id="ck2" type="checkbox" checked/>
+        const label = document.createElement('label');
+        label.setAttribute('for', `ck${i}`);
 
-              <label for="ck2"></label>
-                         <input id="ck3" type="checkbox" />
+        rightDiv.appendChild(checkbox);
+        rightDiv.appendChild(label);
+      }
 
-              <label for="ck3"></label>
-                           <input id="ck4" type="checkbox" />
-            <label for="ck4"></label>
-                          <input id="ck5" type="checkbox" />
-              <label for="ck5"></label>
+      skillsItemDiv.appendChild(rightDiv);
 
-           </div>
-         </div>
-         
-       </div>
-     <div class="section">
-     <div class="section__title">
-       Interests
-       </div>
-       <div class="section__list">
-         <div class="section__list-item">
-                  Programming and video games.
-          </div>
+      return skillsItemDiv;
+    }
+
+    const skillsContainer = document.querySelector('.skills');
+
+    const javascriptSkills = generateSkillsItem('Javascript', 5, [1, 2]);
+    const cssSkills = generateSkillsItem('CSS', 5, [1, 2]);
+
+    skillsContainer.appendChild(javascriptSkills);
+    skillsContainer.appendChild(cssSkills);
+        </script>
+
        </div>
      </div>
      </div>
