@@ -1,126 +1,63 @@
-const blockWidth = 300;
-const blockHeight = 30;
-let currentBlock;
+async function typewriter(text, elementId, waitAfter, collapse_after=true) {
+    var n = 0,
+        isTag = false
+    addText = "";
+    const el = document.getElementById(elementId);
 
-let blockDir;
-let blockSpeed;
+    const wait = () => new Promise(r => setTimeout(r, waitAfter));
+    const nowait = () => new Promise(r => r());
 
-let placedBlocks = [];
+    const render = () => el.innerHTML = (text.slice(0, n + 1) + addText);
 
+    const cursor = document.createElement('span');
+    cursor.id = "blink";
 
-const statePlaying = "playing";
-const stateLose = "lose";
-const stateWin = "win";
+    el.style.setProperty("margin-right", "-10px");
+    el.style.setProperty("--cursor-visibility", "visible");
+    while (n < text.length) {
+        if (text.charAt(n + 1) === "<") isTag = true;
+        if (text.charAt(n + 1) === ">") isTag = false;
 
-let menuState = statePlaying;
+        if (isTag) {
+            n++;
+            continue;
+        }
 
-function setup() {
-  createCanvas(600, 600);
-  
-  textAlign(CENTER, CENTER);
-  
-  newGame();
-}
+        requestAnimationFrame(render);
 
-function draw() {
-  background(220);
-  
-  if(menuState === statePlaying) { 
-    textSize(blockHeight);
-    updateBlock();
-    drawBlocks();
-  } else if(menuState === stateLose) {
-    textSize(blockHeight * 2);
-    fill(255, 0, 0);
-    text("Sorry, you lost :,(", width/2, height/2);
-    textSize(blockHeight);
-    text("Press space to start a new game!", width/2, height * 3/4);
-  } else if(menuState === stateWin) {
-    textSize(blockHeight * 2);
-    fill(0, 255, 0);
-    text("Congrats, you won!", width/2, height/2);
-    textSize(blockHeight);
-    text("Press space to start a new game!", width/2, height * 3/4);
-  }  
-}
+        if (waitAfter === 0) {
+            await nowait();
+        } else {
+            await wait();
+        }
 
-function keyReleased() {
-  if(key === " ") {
-    if(menuState === statePlaying) {
-      placeBlock(); 
-    } else {
-      newGame();
-      menuState = statePlaying;
+        n++;
     }
-  }
+    if (collapse_after) {
+        el.style.setProperty("--cursor-visibility", "collapse");
+    }
 }
 
-function newGame() {
-  currentBlock = createVector(0, height-blockHeight, blockWidth);
-  
-  blockDir = 1;
-  blockSpeed = 2;
-  
-  placedBlocks = [];
+function parseDelay(d) {
+    const parsed = parseInt(d, 10);
+    if (isNaN(parsed)) return 0;
+    return parsed;
 }
 
-function updateBlock() {
-  currentBlock.x += blockDir * blockSpeed;
-  
-  if(currentBlock.x < 0) {
-    blockDir = 1;
-  }
-  if(currentBlock.x + currentBlock.z > width) {
-    blockDir = -1;
-  }  
-}
-
-function drawBlocks() {
-  fill(255, 0, 0);
-  rect(currentBlock.x, currentBlock.y, currentBlock.z, blockHeight);
-  
-  fill(50);
-  for(let block of placedBlocks) {
-    rect(block.x, block.y, block.z, blockHeight);
-  }
-  
-  text(placedBlocks.length, blockHeight, blockHeight);
-}
-
-function placeBlock() {
-  const prevBlock = placedBlocks[placedBlocks.length - 1];
-  
-  let newWidth = blockWidth;
-  
-  if(prevBlock) {
-    const leftEdge = max(prevBlock.x, currentBlock.x);
-    const rightEdge = min(prevBlock.x + prevBlock.z, currentBlock.x + currentBlock.z);
-
-    newWidth = rightEdge - leftEdge;
-    
-    currentBlock.x = leftEdge;
-    currentBlock.z = newWidth;
-  }
-  
-  if(newWidth < 0) {
-    menuState = stateLose;
+const ps1Delay = parseDelay("15"),
+    stdoutDelay = parseDelay("15"),
+    commandDelay = parseDelay("15");
+const typeeffetct = async () => {
+    await typewriter("\u003cstrong\u003e\u003cspan id=\u0027user\u0027\u003e@nreeves.em\u003c\/span\u003e\u003cspan id=\u0027terminal\u0027\u003e:\u003c\/span\u003e\u003cspan id=\u0027dir\u0027\u003e~\/\u003c\/span\u003e\u003c\/strong\u003e\u003cspan id=\u0027terminal\u0027\u003e$\u003c\/span\u003e", "ps1_01", ps1Delay); 
+    await typewriter("\u003cspan id=\u0027terminal\u0027\u003ecd About\u003c\/span\u003e", "cd", commandDelay);
+    await typewriter("\u003cstrong\u003e\u003cspan id=\u0027user\u0027\u003e@nreeves.em\u003c\/span\u003e\u003cspan id=\u0027terminal\u0027\u003e:\u003c\/span\u003e\u003cspan id=\u0027dir\u0027\u003e~\/About\u003c\/span\u003e\u003c\/strong\u003e\u003cspan id=\u0027terminal\u0027\u003e$ more About.txt\u003c\/span\u003e", "ps1_02", ps1Delay); 
+   
+    await typewriter("\u003cspan id=\u0027terminal\u0027\u003e\u003cbr\u003e\       My name is Nathan,\u003cbr\u003e\n          \u003cbr\u003e\n\u003cbr\u003e\n  I'm a Software Engineer\u003c\/\u003e \u003c\/p\u003e\n\u003c\/span\u003e", "std_out_01", stdoutDelay);
+    await typewriter("\u003cstrong\u003e\u003cspan id=\u0027user\u0027\u003e@nreeves.em\u003c\/span\u003e\u003cspan id=\u0027terminal\u0027\u003e:\u003c\/span\u003e\u003cspan id=\u0027dir\u0027\u003e~\/About\u003c\/span\u003e\u003c\/strong\u003e\u003cspan id=\u0027terminal\u0027\u003e$\u003c\/span\u003e", "ps1_03", ps1Delay); 
+    await typewriter("\u003cspan id=\u0027terminal\u0027\u003els .\/Links\/\u003c\/span\u003e", "ls", commandDelay);
+    await typewriter("\u003cspan id=\u0027terminal\u0027\u003e\u003cspan id=\u0027terminal\u0027\u003e\u003cspan id=\u0027terminal\u0027\u003e\u003cstrong\u003e\u003cspan id=\u0027dir\u0027\u003e.\/Links\/\u003c\/span\u003e\u003c\/strong\u003e\u003cbr\u003e├── \u003ca href=\u0027http:\/\www.instagram.com/nreeves.em\u0027\u003eInstagram\u003c\/a\u003e\u003c\/span\u003e\u003cbr\u003e├── \u003ca href=\u0027https://github.com/nreeves\u0027\u003eGithub\u003c\/a\u003e\u003c\/span\u003e\u003cbr\u003e└── \u003ca href=\u0027www.linkedin.com/in/reevesnate\u0027\u003eLinkedIn\u003c\/a\u003e\u003c\/span\u003e", "std_out_02", stdoutDelay);
+    await typewriter("\u003cstrong\u003e\u003cspan id=\u0027user\u0027\u003e@nreeves.em\u003c\/span\u003e\u003cspan id=\u0027terminal\u0027\u003e:\u003c\/span\u003e\u003cspan id=\u0027dir\u0027\u003e~\/Links\u003c\/span\u003e\u003c\/strong\u003e\u003cspan id=\u0027terminal\u0027\u003e$\u003c\/span\u003e ", "ps1_04", ps1Delay, false);
     return;
-  }
-  
-  placedBlocks.push(currentBlock);
-  
-  blockSpeed *= 1.1;
-  
-  newBlock(newWidth);
 }
 
-function newBlock(newWidth) {
-  const blockStackHeight = (placedBlocks.length + 1) * blockHeight;
-  
-  if(blockStackHeight > height) {
-    menuState = stateWin;
-    return;
-  }
-  
-  currentBlock = createVector(0, height - blockStackHeight, newWidth);
-}
+typeeffetct()
