@@ -19,10 +19,11 @@ body{
     cursor:pointer;
     margin:20px;
 }
-.conatiner{
+.container{
 width:450px;
 margin:auto;
 height:450px;
+text-align: center;
 
 background-size:cover;
 display:grid;
@@ -31,6 +32,10 @@ grid-template-rows: 150px 150px 150px;
 
 
 }
+.h1{
+    color: #40916c;
+}
+
 .tile{
 background: url(https://ualr.edu/facultyexcellence/files/2016/09/Thomas-Wallace.png);
 font-weight:900;
