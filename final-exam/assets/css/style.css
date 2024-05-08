@@ -17,7 +17,7 @@
   }
   
   .content {
-    background: url('../img/backdrop_745.gif') repeat-y top center;
+    background: url('https://www.runescape.com/img/rsp777/scroll/backdrop_745.gif') repeat-y top center;
     padding: 50px 75px;
     position: relative;
     margin: auto;
@@ -32,7 +32,7 @@
   
   .content:before,
   .content:after {
-    background: url('../img/backdrop_765_top.gif') no-repeat center
+    background: url('https://www.runescape.com/img/rsp777/scroll/backdrop_765_top.gif') no-repeat center
       top;
     content: '';
     height: 50px;
@@ -43,7 +43,7 @@
   }
   
   .content:after {
-    background: url('../img/backdrop_765_bottom.gif') no-repeat
+    background: url('https://www.runescape.com/img/rsp777/scroll/backdrop_765_bottom.gif') no-repeat
       center bottom;
     bottom: -11px;
     top: auto;
