@@ -21,20 +21,20 @@ html {
   main{
     width: 100%;
     margin: 20px auto;
-    border: 1px solid #000;
+    border: 1px solid green0;
     background-image:url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/7248/grid-1.png");
   }
   
   header.primary, footer.primary{
     width:97.5%;
-    background: rgba(0, 0, 0, 0.4);
+    background-color: yellow ;
     margin:1.25%;
     padding:20px;
     float:left;
   }
   
   #blog{
-    background: rgba(0, 0, 0, 0.6);
+    background-color: yellow ;
     width: 58%;
     margin-left:1.25%;
     padding:20px;
@@ -42,7 +42,7 @@ html {
   }
   
   aside{
-    background: rgba(0, 0, 0, 0.3);
+    background-color: yellow ;
     width: 38.25%;
     margin-left:1.25%;
     padding:20px;

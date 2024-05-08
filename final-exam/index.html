@@ -1,49 +1,129 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>My Website</title>
-    <link rel="stylesheet" href="assets/style.css">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-  </head>
-  <body>
-    <main>
-      <button class="Refresh" onclick="location.reload()"><svg width="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M463.5 224H472c13.3 0 24-10.7 24-24V72c0-9.7-5.8-18.5-14.8-22.2s-19.3-1.7-26.2 5.2L413.4 96.6c-87.6-86.5-228.7-86.2-315.8 1c-87.5 87.5-87.5 229.3 0 316.8s229.3 87.5 316.8 0c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0c-62.5 62.5-163.8 62.5-226.3 0s-62.5-163.8 0-226.3c62.2-62.2 162.7-62.5 225.3-1L327 183c-6.9 6.9-8.9 17.2-5.2 26.2s12.5 14.8 22.2 14.8H463.5z"/></svg></button>
-      <div class="container">
-          <div class="tile" onclick="MoveMe(0)">1</div>
-          <div class="tile" onclick="MoveMe(1)">2</div>
-          <div class="tile" onclick="MoveMe(2)">3</div>
-          <div class="tile" onclick="MoveMe(3)">4</div>
-          <div class="tile" onclick="MoveMe(4)">5</div>
-          <div class="tile" onclick="MoveMe(5)">6</div>
-          <div class="tile" onclick="MoveMe(6)">7</div>
-          <div class="tile" onclick="MoveMe(7)">8</div>
-          <div class="emtile"></div>
-      </div>
-      <h1 id="container"> Javascript Puzzle Slider </h1>
-      <div class="blscreen">
-          <div class="winScreen">
-              <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.vecteezy.com%2Ffree-vector%2Fyou-win&psig=AOvVaw1j_UkwNyk7jZOlGvW3dww4&ust=1714418911915000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCNjWzaPS5YUDFQAAAAAdAAAAABAE" alt="">
-              <div class="WinMessage">
-                  <h2>You Won The Match</h2>
-                  <div class="StarGroup"><svg viewBox="0 0 576 512" width="90" title="star">
-                      <path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z" />
-                      
-                    </svg>
-                    <svg viewBox="0 0 576 512" width="90" title="star">
-                      <path  d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z" />
-                    </svg>
-                    <svg  viewBox="0 0 576 512" width="90" title="star">
-                      <path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z" />
-                    </svg></div>
-                  Moves: <i class="MovesCount"></i>
-                  <div class="buttonGroup"><button onclick="location.reload()">Play Again!</button></div>
-              </div>
-          </div>
-      </div>
-    </main>
-	<script src="assets/script.js"></script>
-  </body>
+<!doctype html>
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"></script> 
+    </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
+	<script src="https://kit.fontawesome.com/5a5a8e1f3d.js"></script>
+    </script>
+
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+
+        <title>Mobile Development final exam</title>
+    </head>
+<body>
+    <nav class="navbar navbar-expand-sm" style="font-family: Arial, Helvetica, sans-serif; background-color: #1a1a1a;">
+        <a class="navbar-brand" href="#"><img src="" width="30"
+                height="35" class="d-inline-block align-center" alt=""></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+</nav>
+
+
+    <br><br>
+    <h1>2000's MMO Styled Checklist for IFSC 3342 </h1>
+
+	</br></br>
+
+<br>
+<section class="content step">
+    <h4>List of all the things done in mobile Development</h4>
+    <div id="guide-steps">
+        <ul style="list-style: none;">
+<li>
+    <div>
+        <input type='checkbox' name='step-checkbox' id='v4-done-ck-16-1' class='stepckbox'/>
+        <label for='v4-done-ck-16-1'>Do  <a href="https://thomaswallace.net/2024/01/23/pre-assessment-lab-6/" target="_blank">Pre-assessment lab</a></label></br>
+    </div>
+</li>
+
+<div class="note-box">
+    <strong></strong>
+    <img class="rounded float-left" alt="Some things may be missing!"><br>
+    <ul>
+        <li>While this is a good resource, check Thomas Wallace's official website for a more detailed list.</li>
+    </ul>
+</div>
+<li>
+    <div>
+        <input type='checkbox' name='step-checkbox' id='v4-done-ck-16-1' class='stepckbox'/>
+        <label for='v4-done-ck-16-1'>Do  <a href="https://thomaswallace.net/2024/02/08/fluid-grids-6/" target="_blank">Fluid Grids</a></label></br>
+    </div>
+</li>
+<li>
+    <div>
+        <input type='checkbox' name='step-checkbox' id='v4-done-ck-16-3' class='stepckbox'/>
+        <label for='v4-done-ck-16-3'>Complete your final exam</label></br>
+    </div>
+</li>
+<div class="note-box">
+                    <img src="https://i.imgur.com/IQmvLDl.png" class="rounded float-left" alt="Guideline">
+                    <strong>Final Exam</strong>
+                    <ul>
+                        <li>Validated HTML5 free of inline styling</li>
+                        <li>Consistent, audience-appropriate visual design.</li>
+                        <li>Device Icons for your site (Favicon/Mobile Icon(s))</li>
+                        <li>Externalized CSS (There should not be any css in your html document)</li>
+                        <li>Cross Browser design and functionality</li>
+							<p> (Testing Environments: Chrome, Firefox, Safari, Edge, Mobile Safari, Android) </p>
+                        <li>Project Inspired by: <img src="/assets/img/img/inspire.JPG"></li>
+                        <li>Use of Progressive Enhancement for all JavaScript implementations</li>
+                        <li>Proper image optimization</li>
+                        <li>Provide Polyfills where necessary for any html5 features that lack support in the testing environments.</li>
+                        <li>Responsive Images</li>
+                        <li>Micro-data where appropriate</li>
+                    </ul>
+					</div>
+
+					<div class="hardcore-box">
+						<strong>Final Project Submission</strong>
+						<img src="https://i.imgur.com/CmKvoXV.png" class="rounded float-left" alt="Important"><br><ul>
+							<p>Inspiration: </p>
+							<li>
+								<iframe width="300" height="400" src="/assets/img/inspire.JPG"></iframe>
+							</li>
+					</li><li>
+					</li></ul></div>
+
+<div>
+	<input type='checkbox' name='step-checkbox' id='v4-done-ck-16-3' class='stepckbox'/>
+    	<label for='v4-done-ck-16-3'>Buy a Bullseye lantern (empty) from Miltog at the market in Dorgeshkaan</label></br>
+</div>
+
+<center>
+    <div class="nav-proc">
+                <span class="nav-proc-option "> 1 / 22 </span>
+			
+                <a class="nav-proc-option" href="https://oldschool.runescape.com/">
+					<b>
+						Next page
+						<i class="fa-solid fa-arrow-right-long"></i>
+					</b>
+				</a>
+            </div>
+</center><br><br>
+
+<footer>
+    <nav class="navbar navbar-expand-sm" style="font-family: Arial, Helvetica, sans-serif; background-color: #1a1a1a;">
+
+        <ul class="navbar-nav sm-icons mr-auto">
+            <li class="nav-item"><a class="nav-link" href="webiste" target="_blank"><i class="fab fa-github"></i></a></li>
+            <li class="nav-item"><a class="nav-link" href="hebiste" target="_blank"><i class="fab fa-github"></i></a></li>
+            <li class="nav-item"><a class="nav-link" href="" target="_blank"><i class="fab fa-twitch"></i></a></li>
+            <li class="nav-item"><a class="nav-link" href="" target="_blank"><i class="fab fa-youtube"></i></a></li>
+        </ul>
+        &copy; 2024 <font color="#90c040"> - <large>Nreeves</large>
+        </font>
+    </nav>
+
+</footer>
+</body>
+
 </html>

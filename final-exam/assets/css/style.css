@@ -1,0 +1,339 @@
+ p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+  }
+  
+  a {
+    color: #90c040;
+  }
+  
+  .content a {
+    color: #7b4f17;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  .content {
+    background: url('/assets/img/backdrop_745.gif') repeat-y top center;
+    padding: 50px 75px;
+    position: relative;
+    margin: auto;
+    width: 765px;
+    color: black;
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1;
+    text-align: left;
+    z-index:1;
+  }
+  
+  .content:before,
+  .content:after {
+    background: url('/assets/img/backdrop_765_top.gif') no-repeat center
+      top;
+    content: '';
+    height: 50px;
+    left: 0;
+    position: absolute;
+    top: -11px;
+    width: 100%;
+  }
+  
+  .content:after {
+    background: url('/assets/img/backdrop_765_bottom.gif') no-repeat
+      center bottom;
+    bottom: -11px;
+    top: auto;
+  }
+  
+  .top-nav {
+    width: 405px;
+    height: 50%;
+    margin: auto;
+  }
+  
+  .top-nav-option {
+    background: black;
+    border: 2px solid #382418;
+    display: inline-block;
+    padding: 7px 15px;
+  }
+  
+  .nav-proc {
+    width: 50%;
+    height: 50%;
+    margin: auto;
+  }
+  
+  .nav-proc-centered {
+    float: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .nav-proc-option {
+    background: black;
+    border: 2px solid #382418;
+    display: inline-block;
+    padding: 7px 15px;
+  }
+  
+  .nav-proc-option-current {
+    color: #fff;
+    font-weight: 700;
+  }
+  
+  .note-box {
+    position: relative;
+    font-size: 12px;
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-right: 5px;
+    text-align: left;
+    padding: 10px;
+    background-color: rgba(240, 227, 194, 0.18);
+    border: 2px solid #382418;
+    z-index: 3;
+  }
+  
+  .note-box > img {
+    padding: 0;
+    list-style-type: none;
+    position: relative;
+    top: -3%;
+    left: -1%;
+  }
+  
+  .note-box > strong {
+    color: black;
+    font-weight: bold;
+  }
+  
+  .note-box > li {
+    padding-right: 10px;
+  }
+  
+  .hardcore-box {
+    color: rgba(0, 0, 0, 1);
+    position: relative;
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-align: left;
+    background-color: rgba(255, 0, 0, 0.18);
+    border: 2px solid #382418;
+    z-index: 3;
+  }
+  
+  .hardcore-box > img {
+    padding: 0;
+    list-style-type: none;
+    position: relative;
+    top: -3%;
+    left: -1%;
+  }
+  
+  .hardcore-box > strong {
+    text-indent: -10px;
+  }
+  
+  .hardcore-box > li {
+    padding-right: 10px;
+  }
+  
+  h3 {
+    text-align: center;
+    color:#7b4f17;
+    font-weight: bold;
+    text-shadow: 1px #000000;
+  }
+  
+  h4 {
+    text-align: center;
+    color: #7b4f17;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+  }
+  
+  li {
+    margin: 6px 0;
+  }
+  
+  h5,
+  h4,
+  h2,
+  h1 {
+    text-align: center;
+  }
+  
+  body {
+    font-family: 'RuneScape-Chat-07';
+    background-color: black;
+    color: yellow;
+    line-height: 1;
+    font-size: 100%;
+    text-align: left;
+  }
+  
+  footer {
+    text-align: center;
+  }
+  
+  label {
+    margin-left: 10px;
+    width: 90%;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+    word-wrap: break-word;
+  }
+  
+  input[type='checkbox'] {
+    position: relative;
+    bottom: 1px;
+  }
+  
+  input:checked + label {
+    text-decoration: line-through;
+    opacity: 0.4;
+  }
+  
+  img {
+    text-indent: 10px;
+    text-align: left;
+    padding-left: 35px;
+    padding-right: 2px;
+    padding-bottom: 5px;
+    max-width: 70%;
+    max-height: 70%;
+    width: auto;
+    height: auto;
+    -webkit-transition: 0.4s ease-in-out;
+    -moz-transition: 0.4s ease-in-out;
+    -o-transition: 0.4s ease-in-out;
+    transition: 0.4s ease-in-out;
+  }
+  
+  img:active {
+    position:relative;
+    z-index: 5;
+    -webkit-transition: 0.4s ease-in-out;
+    -moz-transition: 0.4s ease-in-out;
+    -o-transition: 0.4s ease-in-out;
+    transition: 0.4s ease-in-out;
+    transform: scale(2.5);
+    transform -webkit-transform: scale(2.5);
+  }
+  
+  iframe {
+      display: block;
+      border-style:none;
+  }
+  
+  table {
+    border-collapse: collapse;
+    table-layout: auto;
+    width: 600px;
+  }
+  
+  th.questname,
+  td.questname {
+    width: 50%;
+    text-align: left;
+    padding: 8px;
+    border: 1px solid black;
+  }
+  
+  th.qp,
+  th.video {
+    width: 25%;
+  }
+  
+  th,
+  td {
+    text-align: left;
+    padding: 8px;
+    border: 1px solid black;
+  }
+  
+  .right {
+    text-align: right;
+    margin-left: auto;
+  }
+  
+  .left {
+    text-align: left;
+    margin-right: auto;
+  }
+  
+  #contentQuestorder {
+    width: 30%;
+    position: relative;
+    margin: 5px 5px;
+  }
+  
+  #addStep {
+    color: #7b4f17;
+  }
+
+body {
+    font-family: 'RuneScape-Chat-07';
+    background-color: black;
+    color: yellow;
+    line-height: 1;
+    font-size: 100%;
+    text-align: left;
+  }
+  
+/* phones */
+  @media only screen and (max-width: 600px) {
+    .content {
+      width: 90%;
+      padding: 30px;
+      font-size: 12px; 
+    }
+    
+    .top-nav,
+    .nav-proc {
+      width: 90%; 
+    }
+  }
+  
+  /*tablets*/
+  @media only screen and (min-width: 601px) and (max-width: 1024px) {
+    .content {
+      width: 80%; 
+      padding: 40px; 
+      font-size: 14px;
+    }
+    
+    .top-nav,
+    .nav-proc {
+      width: 70%; 
+    }
+  }
+  
+  /* desktops */
+  @media only screen and (min-width: 1025px) {
+    .content {
+      width: 765px; 
+      padding: 50px 75px;
+      font-size: 13px; 
+    }
+    
+    .top-nav,
+    .nav-proc {
+      width: 405px; 
+    }
+  }
