@@ -3,6 +3,17 @@
 <meta name="author" content="nreeves">
 <link rel="styles" href="../mobile-development/pre-assessment/assets/css/screen.css">
 <link href="/GitHub/mobile-development/style/style.css" rel="stylesheet"/>
+<script type="module">
+
+  import {forceSimulation, forceCollide, forceX} from "https://cdn.jsdelivr.net/npm/d3-force@3/+esm";
+  
+  const nodes = [{}, {}];
+  const simulation = forceSimulation(nodes)
+      .force("x", forceX())
+      .force("collide", forceCollide(5))
+      .on("tick", () => console.log(nodes[0].x));
+  
+  </script>
 
 </head>
 
@@ -15,8 +26,12 @@
           <li><a href="html-fluid-grid/index.html">Fluid grid assignment || Mobile Development</a></li>
           <li><a href="html-fluid-grid/index.html">css-grid-exercise-1 || Mobile Development</a></li>
       </ul>
-      <p>
-        notes: Redo home page with SCSS + Bootstrap
-
-      </p>
+      <figure>
+        <img 
+        src="https://waterdata.usgs.gov/nwisweb/graph?agency_cd=USGS&site_no=07055660&parm_cd=00060&period=7"
+        alt="A line graph showing 7 days of hydrological data.  The line is orange, with black axes"
+        >
+        <figcaption>
+        </figcaption>
+    </figure>
 </body>
