@@ -1,0 +1,34 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr; /* Main content area takes up 3 parts, sidebar and header take up 1 part each */
+    grid-template-areas:
+      "header header header"
+      "main main sidebar"
+      "footer footer footer";
+    gap: 20px; /* Adjust the gap between grid areas */
+  }
+
+  header.primary {
+    grid-area: header;
+  }
+
+  main {
+    grid-area: main;
+    display: grid;
+    grid-template-columns: 3fr 1fr; /* Main content takes up 3 parts, sidebar takes up 1 part */
+    gap: 20px; /* Adjust the gap between main content and sidebar */
+  }
+
+  #content {
+    grid-column: 1 / 2; /* Span across the first column */
+  }
+
+  #supporting-material {
+    grid-column: 2 / 3; /* Span across the second column */
+  }
+
+  footer.primary {
+    grid-area: footer;
+  }

@@ -1,0 +1,50 @@
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+    box-sizing: border-box;
+  }
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+  
+  .cf:before,
+  .cf:after {
+      content: " "; /* 1 */
+      display: table; /* 2 */
+  }
+  
+  .cf:after {
+      clear: both;
+  }
+  
+  main{
+    width: 100%;
+    margin: 20px auto;
+    border: 1px solid green0;
+    background-image:url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/7248/grid-1.png");
+  }
+  
+  header.primary, footer.primary{
+    width:97.5%;
+    background-color: yellow ;
+    margin:1.25%;
+    padding:20px;
+    float:left;
+  }
+  
+  #blog{
+    background-color: yellow ;
+    width: 58%;
+    margin-left:1.25%;
+    padding:20px;
+    float:left;
+  }
+  
+  aside{
+    background-color: yellow ;
+    width: 38.25%;
+    margin-left:1.25%;
+    padding:20px;
+    float:left;
+  }
